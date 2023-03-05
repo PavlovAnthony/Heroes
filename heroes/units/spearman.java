@@ -4,7 +4,7 @@ public class spearman extends human{
     protected String name;
 
     public spearman (String name){
-        super(100, 120, 4, 4);
+        super(10, 4, 5, 4, 3, 1);
         this.name = name; 
     }
     @Override

@@ -2,12 +2,11 @@ package OOP.heroes.units;
 
     public abstract class  archer extends human {
 
-        int shots, maxShots;
+        protected int shots;
         protected String name;
-        public archer (int hp, int maxHP, int att, int def, int shots, int maxShots, String name){
-            super(hp, maxHP, att, def);
+        public archer (int hp, int att, int def, int speed, int shots, int maxDamage, int minDamage, String name){
+            super(hp, att, def, speed, maxDamage, minDamage);
             this.shots = shots;
-            this.maxShots = maxShots;
             this.name = name; 
         }
         

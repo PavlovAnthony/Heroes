@@ -3,7 +3,7 @@ package OOP.heroes.units;
 public class sniper extends archer{
     
     public sniper (String name){
-        super(100, 120, 4, 4,  5, 12, name);
+        super(15, 12, 10, 9,  32, 15, 12, name);
         
 
     }

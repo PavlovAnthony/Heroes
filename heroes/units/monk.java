@@ -2,7 +2,7 @@ package OOP.heroes.units;
 
 public class monk extends magician{
     public monk (String name){
-        super(100, 120, 4, 4, 12, name);
+        super(30, 12, 7, 5, 1, -4, -4, name);
     }
     @Override
     public String getInfo(){

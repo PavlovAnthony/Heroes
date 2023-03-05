@@ -4,7 +4,7 @@ public class outlaw extends human{
     protected String name;
 
     public outlaw (String name){
-        super(100, 120, 4, 4);
+        super(10, 8, 3, 6, 4, 2);
         this.name = name; 
     }
     @Override

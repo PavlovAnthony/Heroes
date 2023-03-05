@@ -2,11 +2,11 @@ package OOP.heroes.units;
 
 public abstract class  magician extends human {
 
-    int healing;
+   protected int magic;
     protected String name;
-    public magician (int hp, int maxHP, int att, int def, int healing, String name){
-        super(hp, maxHP, att, def);
-        this.healing = healing;
+    public magician (int hp, int att, int def, int speed, int magic, int maxDamage, int minDamage, String name){
+        super(hp, att, def, speed, maxDamage, minDamage);
+        this.magic = magic;
         this.name = name; 
     }
     
