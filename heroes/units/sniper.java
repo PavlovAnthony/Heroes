@@ -2,8 +2,8 @@ package OOP.heroes.units;
 
 public class sniper extends archer{
     
-    public sniper (String name){
-        super(15, 12, 10, 9,  32, 15, 12, name);
+    public sniper (String name, int side, point2D startPoint){
+        super(side, 15,15,  12, 10, 9,  startPoint, 32, 15, 12, name, "Stand");
         
 
     }
@@ -11,4 +11,5 @@ public class sniper extends archer{
     public String getInfo(){
         return "Снайпер " + name;
     }
+    
 }

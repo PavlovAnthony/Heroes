@@ -3,13 +3,14 @@ package OOP.heroes.units;
 public class spearman extends human{
     protected String name;
 
-    public spearman (String name){
-        super(10, 4, 5, 4, 3, 1);
+    public spearman (String name, int side, point2D startPoint){
+        super(side, 40, 40,  10, 7, 4,  startPoint, 3, 1, "Stand");
         this.name = name; 
     }
     @Override
     public String getInfo(){
         return "Копейщик " + name;
     }
+    
     
 }

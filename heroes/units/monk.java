@@ -1,12 +1,16 @@
 package OOP.heroes.units;
 
 public class monk extends magician{
-    public monk (String name){
-        super(30, 12, 7, 5, 1, -4, -4, name);
+    
+    public monk (String name, int side, point2D startPoint){
+        super(side, 30, 30, 12, 7, 5,   startPoint, 1, -4, -4, name, "Stand");
+        
+
     }
     @Override
     public String getInfo(){
-        return "Монах " + name;
+        return "Монах " + name ;
     }
+    
     
 }
