@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class  archer extends human {
 
-        protected int shots;
+        protected  int shots;
         protected String name;
         public archer (int side, int hp, int maxHp, int att, int def, int speed, point2D startPoint, int shots, int maxDamage, int minDamage, String name, String state){
             super(side, hp, maxHp, att, def, speed, startPoint, maxDamage, minDamage, state);
@@ -16,6 +16,8 @@ public abstract class  archer extends human {
         public int getAtt(){
             return super.att;
         }
+
+        
         @Override
         public void step(ArrayList<human> team1, ArrayList<human> team2){
 

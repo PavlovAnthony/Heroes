@@ -11,12 +11,18 @@ public abstract class human implements gameinterface{
     public point2D startPoint;
    
 
+    public int getSide(){
+        return side;
+    }
+    public String getState(){
+        return state;
+    }
 
     public int getHp(){
         return hp;
     }
 
-
+    
     
     public int getSpeed(){
         return speed;
@@ -62,11 +68,11 @@ public abstract class human implements gameinterface{
             if (min> startPoint.getDistance(team.get(i).startPoint) && (team.get(i).getHp()>0))  {
                 index = i;
                 min = startPoint.getDistance(team.get(i).startPoint);
-                
             
             }
-            
-            
+            // if (team.get(index).getHp()==0)   { 
+            // System.out.println("конец все убиты");
+            // System.exit(0);}
         }
 
         return index;

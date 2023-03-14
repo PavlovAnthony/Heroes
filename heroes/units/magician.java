@@ -20,7 +20,7 @@ public abstract class  magician extends human {
     @Override
         public void step(ArrayList<human> team1, ArrayList<human> team2){
 
-            if (state.equals("die")) return;
+            if (state.equals("die")||(magic<=0)) return;
             human victim = findNearhero(team1);
             System.out.println(" волшебник " + name + " вылечил " + victim.getInfo());
             // float damage = (victim.def - att)>0 ? minDamage: (victim.def - att)<0 ? maxDamage : (minDamage+maxDamage)/2;

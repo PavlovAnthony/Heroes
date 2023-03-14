@@ -68,7 +68,7 @@ public class game {
     // вывод списка команды
     public static void printCommand(ArrayList<human> list) {
 
-        list.forEach(n -> System.out.println(n.getInfo() + " " + n.getSpeed()+ " " + n.getHp()));
+        list.forEach(n -> System.out.println(n.getInfo() + " " +"Speed" +n.getSpeed()+ " Hp" + n.getHp()+" state"+ n.getState()+ " Side"+ n.getSide() ));
 
     }
 
