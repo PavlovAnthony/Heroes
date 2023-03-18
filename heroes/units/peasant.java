@@ -6,7 +6,7 @@ public class peasant extends human{
     protected String name;
     protected int delivery;
     public peasant (String name, int side, point2D startPoint){
-        super(side, 1, 1,  1, 1, 3,  startPoint, 1, 1, "Stand");
+        super(side, 1, 1,  1, 1, 3,  startPoint, 1, 1,name,  "Stand");
         this.name = name; 
         this.delivery = 1;
     }

@@ -52,8 +52,8 @@ public class commandList {
     }
     private static point2D getStartPoint(int i, int j) {
         point2D startPoint = new point2D(i, j);
-        startPoint.setY(j);
-        startPoint.setX(i);
+        startPoint.setY(i);
+        startPoint.setX(j);
         return startPoint;
     }
     // сортировка команды

@@ -6,10 +6,19 @@ public abstract class human implements gameinterface{
     
     protected int side, hp, maxHp,  att, def, speed, maxDamage,  minDamage;
     protected  String state;
-        
+    protected String name;
     
     public point2D startPoint;
    
+    @Override
+    public String toString() {
+        return name +
+                " H:" + Math.round(hp) +
+                " D:" + def +
+                " A:" + att +
+                " Dmg:" + Math.round(Math.abs((minDamage+maxDamage)/2)) +
+                " " + state;
+    }
 
     public int getSide(){
         return side;
@@ -37,10 +46,13 @@ public abstract class human implements gameinterface{
             state = "die";
         }
         if (hp>maxHp) hp =maxHp;
+        
     }
 
-    public human(int side, int hp, int maxHp, int att, int def, int speed, point2D startPoint, int maxDamage, int minDamage, String state){
-        
+
+    public int[] getCoords() {return new int[]{startPoint.x, startPoint.y};}
+    public human(int side, int hp, int maxHp, int att, int def, int speed, point2D startPoint, int maxDamage, int minDamage, String name,String state){
+        this.name = name;
         this.side = side;
         this.hp = hp; //
         this.maxHp = maxHp;

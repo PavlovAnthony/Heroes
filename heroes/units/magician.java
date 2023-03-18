@@ -7,9 +7,9 @@ public abstract class  magician extends human {
    protected int magic;
     protected String name;
     public magician (int side, int hp, int maxHp, int att, int def, int speed, point2D startPoint, int magic, int maxDamage, int minDamage, String name, String state){
-        super(side, hp, maxHp, att, def, speed, startPoint, maxDamage, minDamage, state);
+        super(side, hp, maxHp, att, def, speed, startPoint, maxDamage, minDamage, name, state);
         this.magic = magic;
-        this.name = name; 
+         this.name = name; 
         this.state = state;
     }
     
@@ -22,7 +22,9 @@ public abstract class  magician extends human {
 
             if (state.equals("die")||(magic<=0)) return;
             human victim = findNearhero(team1);
-            System.out.println(" волшебник " + name + " вылечил " + victim.getInfo());
+            if ((victim.hp>=maxHp)||(victim.state=="die")) return;
+            // if (victim.state=="die") return;
+            System.out.println(getInfo() + " вылечил " + victim.getInfo());
             // float damage = (victim.def - att)>0 ? minDamage: (victim.def - att)<0 ? maxDamage : (minDamage+maxDamage)/2;
             victim.getDamage(minDamage);
             magic-=1;
@@ -35,9 +37,9 @@ public abstract class  magician extends human {
             int index =0;
             for (int i = 0; i < team.size(); i++) {
 
-                if (minHp> team.get(i).maxHp-team.get(i).hp) {
-                    index = 1;
-                    minHp = team.get(i).maxHp-team.get(i).hp;
+                if (minHp> team.get(i).hp-team.get(i).maxHp) {
+                    index = i;
+                    minHp = team.get(i).hp-team.get(i).maxHp;
                 }
                 
             }
@@ -45,6 +47,15 @@ public abstract class  magician extends human {
             return team.get(index);
         }
 
-
+        @Override
+        public String toString() {
+            return name +
+                    " H:" + Math.round(hp) +
+                    " D:" + def +
+                    " A:" + att +
+                    " Dmg:" + Math.round(Math.abs((minDamage+maxDamage)/2)) +
+                    " Magic:" + magic + " " +
+                    state;
+        }
 
 }

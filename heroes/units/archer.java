@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public abstract class  archer extends human {
 
         protected  int shots;
-        protected String name;
-        public archer (int side, int hp, int maxHp, int att, int def, int speed, point2D startPoint, int shots, int maxDamage, int minDamage, String name, String state){
-            super(side, hp, maxHp, att, def, speed, startPoint, maxDamage, minDamage, state);
+        protected  int maxShots;
+        // protected String name;
+        public archer (int side, int hp, int maxHp, int att, int def, int speed, point2D startPoint, int shots, int maxDamage, int minDamage, String name, String state, int maxShots){
+            super(side, hp, maxHp, att, def, speed, startPoint, maxDamage, minDamage, name, state);
             this.shots = shots;
-            this.name = name; 
+            this.maxShots = maxShots;
+            // this.name = name; 
         }
         
         
@@ -23,19 +25,24 @@ public abstract class  archer extends human {
 
             if (state.equals("die") || shots==0) return;
             human victim = team2.get(findNearEnemie(team2));
-            
+            if (victim.state.equals("die")) return;
             float damage = (victim.def - att)>0 ? minDamage: (victim.def - att)<0 ? maxDamage : (minDamage+maxDamage)/2;
             victim.getDamage(damage);
-            System.out.println(" стрелок " + name + " выстрелил в " + victim.getInfo());
+            System.out.println(getInfo()  + " выстрелил в " + victim.getInfo());
             for (human human:team1) {
-                if (human.getInfo().equals("Крестьянин") && human.state.equals("Stand")){
+                if (human.getInfo().toString().split(" ")[0].equals("Крестьянин") && human.state.equals("Stand") ){
                     human.state = "Busy";
+                    System.out.println("есть крестьянин");
+                    // if (shots<maxShots) 
+                    // shots++;
                     return;
 
                 }
                 
             }
+            System.out.println("вычитаем стрелу");
             shots--;
+
 
             
             
@@ -43,5 +50,16 @@ public abstract class  archer extends human {
 
             
         }
+
+        @Override
+    public String toString() {
+        return name +
+                " H:" + Math.round(hp) +
+                " D:" + def +
+                " A:" + att +
+                " Dmg:" + Math.round(Math.abs((minDamage+maxDamage)/2)) +
+                " Shots:" + shots + " " +
+                state;
+    }
     }
 
