@@ -1,6 +1,6 @@
 package OOP.heroes.units;
 
-public class outlaw extends human{
+public class outlaw extends Warrior{
     protected String name;
 
     public outlaw (String name, int side, point2D startPoint){

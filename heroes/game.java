@@ -8,15 +8,7 @@ import java.util.Scanner;
 
 import OOP.heroes.units.commandList;
 import OOP.heroes.units.human;
-// import OOP.heroes.units.monk;
-// import OOP.heroes.units.names;
-// import OOP.heroes.units.outlaw;
-// import OOP.heroes.units.peasant;
-// import OOP.heroes.units.point2D;
-// import OOP.heroes.units.sniper;
-// import OOP.heroes.units.spearman;
-// import OOP.heroes.units.wizard;
-// import OOP.heroes.units.xbowman;
+
 
 public class game {
     static final int UNITS = 10;
@@ -27,10 +19,7 @@ public class game {
         Scanner user_input = new Scanner(System.in);
         System.out.print("Press Enter to begin.");
         user_input.nextLine();
-        // ArrayList<human> red = new ArrayList<>();
-        // ArrayList<human> black = new ArrayList<>();
-        // ArrayList<human> priorityList = new ArrayList<>();
-        // sniper.getAtt();
+        
         // Scanner user_input = new Scanner(System.in);
         System.out.println("Состав команды red:");
         commandList.fillCommand(red, 0, 4);
@@ -48,10 +37,7 @@ public class game {
         priorityList.addAll(black);
         priorityList.addAll(red);
         commandList.sortCommand(priorityList);
-        // printCommand(priorityList);
-        // String step ="";
-        // System.out.println();
-        // System.out.println("Игра началась");
+      
 
 
         while (true){
@@ -70,19 +56,7 @@ public class game {
         }
 
         
-        // while (step.equals("")) {
-        //     for (human human:priorityList){
-
-        //         if(red.contains(human)) human.step(red, black);
-        //         else human.step(black, red);
-        //     }
-
-        //     System.out.println();
-        //     printCommand(priorityList);
-        //     // priorityList.forEach(n -> System.out.println(n.getInfo()));
-        //     step =user_input.nextLine();
-            
-        // }
+        
 
 
        

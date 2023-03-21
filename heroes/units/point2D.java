@@ -5,7 +5,7 @@ public class point2D {
     public point2D (int x, int y){
 
         this.x=x;
-        this.x=y;
+        this.y=y;
     }
 
     public void setX(int x) {
@@ -25,10 +25,16 @@ public class point2D {
 
     protected double getDistance(point2D enemie ){
         return Math.sqrt(Math.pow(x - enemie.x,2) + Math.pow(y - enemie.y,2));
-        // return Math.hypot(Math.abs(enemie.y- y), Math.abs(enemie.x - x));
+        
 
     }
+    protected point2D getDirection(point2D enemie){
+      
 
+
+        return new point2D(x-enemie.x, y-enemie.y);
+        
+    }
 
 
 }
